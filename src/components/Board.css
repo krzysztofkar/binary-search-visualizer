@@ -1,7 +1,7 @@
 .container {
   display: flex;
   flex-wrap: wrap;
-  margin: 20px 10%;
+  margin: 10px auto;
 }
 
 .box {
@@ -13,4 +13,8 @@
   border: 1px solid black;
   background-color: #ffc600;
   flex: 0 0 calc(9%);
+  margin: 1px;
+}
+.button {
+  margin: 10px auto;
 }

@@ -21,16 +21,34 @@ const Board = () => {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="number"
-          value={number}
-          onChange={e => setNumber(e.target.value)}
-        />
-        <button type="submit"> Show binarySearch </button>
-      </form>
-      <button onClick={() => window.location.reload()}>Reset board</button>
+    <div className="container">
+      <div className="row">
+        <form onSubmit={handleSubmit}>
+          <div className="input-field col l12 m12 s12">
+            <input
+              id="number"
+              placeholder="Provide a number"
+              type="number"
+              className="validate"
+              value={number}
+              onChange={e => setNumber(e.target.value)}
+              required="1"
+              aria-required="true"
+              min="1"
+              max="100"
+            />
+          </div>
+          <button className="waves-effect waves-light btn" type="submit">
+            Show binary search
+          </button>
+        </form>
+        <button
+          className="waves-effect waves-light btn button"
+          onClick={() => window.location.reload()}
+        >
+          Reset board
+        </button>
+      </div>
       <div className="container">
         {board.map((number, index) => {
           return (

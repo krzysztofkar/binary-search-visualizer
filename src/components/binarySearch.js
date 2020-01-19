@@ -12,6 +12,9 @@ const binarySearch = (array, target) => {
     if (target == array[guess].id) {
       setTimeout(() => {
         array[guess].style.backgroundColor = "green";
+        setTimeout(() => {
+          alert("Target was found at index " + guess);
+        }, 10);
       }, 1000 * i);
       return console.log("Target was found at index " + guess);
     } else if (target > array[guess].id) {
