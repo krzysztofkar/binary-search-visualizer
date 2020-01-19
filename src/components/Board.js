@@ -11,13 +11,13 @@ const createBoxes = () => {
 };
 
 const Board = () => {
-  let [board, setBoard] = useState(createBoxes());
+  let [board] = useState(createBoxes());
   const [number, setNumber] = useState("");
 
   const handleSubmit = e => {
     e.preventDefault();
     const boxes = document.querySelectorAll(".box");
-    console.log(binarySearch(boxes, number));
+    binarySearch(boxes, number);
   };
 
   return (
@@ -30,6 +30,7 @@ const Board = () => {
         />
         <button type="submit"> Show binarySearch </button>
       </form>
+      <button onClick={() => window.location.reload()}>Reset board</button>
       <div className="container">
         {board.map((number, index) => {
           return (
