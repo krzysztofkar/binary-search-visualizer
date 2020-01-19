@@ -5,7 +5,7 @@ import "./App.css";
 const App = () => {
   return (
     <div className="app">
-      <div className="title">Application for binary search vizualization</div>
+      <div className="title">Application for binary search visualization</div>
       <div className="desc">
         On each step application makes a guess and colors it red.
         <br />
