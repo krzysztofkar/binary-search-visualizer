@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import "./Board.css";
+import binarySearch from "./binarySearch";
 
 const createBoxes = () => {
   const boxes = [];
-  for (let i = 1; i <= 10; i++) {
+  for (let i = 1; i <= 100; i++) {
     boxes.push(i);
   }
   return boxes;
@@ -11,13 +12,28 @@ const createBoxes = () => {
 
 const Board = () => {
   let [board, setBoard] = useState(createBoxes());
+  const [number, setNumber] = useState("");
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    const boxes = document.querySelectorAll(".box");
+    console.log(binarySearch(boxes, number));
+  };
 
   return (
     <div>
+      <form onSubmit={handleSubmit}>
+        <input
+          type="number"
+          value={number}
+          onChange={e => setNumber(e.target.value)}
+        />
+        <button type="submit"> Show binarySearch </button>
+      </form>
       <div className="container">
-        {board.map(number => {
+        {board.map((number, index) => {
           return (
-            <div className="box" key={number}>
+            <div className="box" key={number} id={number}>
               <span>{number}</span>
             </div>
           );
