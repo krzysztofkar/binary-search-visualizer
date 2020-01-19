@@ -1,6 +1,6 @@
 ## Binary Search Visualizer 
 
-Application for displaying how binary search algorith works.
+Application for displaying how binary search algorithm works.
 
 Click [HERE](https://krzysztofkar.github.io/binary-search-visualizer/) for live demo 
 
